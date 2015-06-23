@@ -132,23 +132,28 @@ $(function() {
         var code = result.codeResult.code; 
 		var a=code.split("");
 		if(a[0]==1){
+            a= a+",@,y"
 
-		 alert("yes");
 		}
 		else{
-			alert("no your lane number is"+a[2]);
+            a= a+",@,n"
+			//alert("no your lane number is"+a[2]);
+
 		}
-        if (App.lastResult !== code) {
-            App.lastResult = code;
-            var $node = null, canvas = Quagga.canvas.dom.image;
-            
-            $node = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="captn"><h4 class="code"></h4></div></div></li>');
-            $node.find("img").attr("src", canvas.toDataURL());
-            $node.find("h4.code").html(code);
-            $("#result_strip ul.thumbnails").prepend($node);
-			   
-			
-        }
+        var link="function.php?link="+a;
+        window.location=link;
+
+        //if (App.lastResult !== code) {
+        //    App.lastResult = code;
+        //    var $node = null, canvas = Quagga.canvas.dom.image;
+        //
+        //    $node = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="captn"><h4 class="code"></h4></div></div></li>');
+        //    $node.find("img").attr("src", canvas.toDataURL());
+        //    $node.find("h4.code").html(code);
+        //    $("#result_strip ul.thumbnails").prepend($node);
+			//
+			//
+        //}
     });
 
 });
