@@ -83,8 +83,8 @@ function onDemandChange(id){
 }
 </script>
     
-    NUMBER OF EMERCENCY LANES: <input type="text" name="emergency" id="id2" value="" onChange="onDemandChange(this.id);"><br>
-    NUMBER OF NORMAL LANES: <input type="text" name="normal" id="id3"  onChange="onDemandChange(this.id);"><br>
+    NUMBER OF EMERCENCY LANES: <input type="text" name="emergency" id="id2" required="required" value="" onChange="onDemandChange(this.id);"><br>
+    NUMBER OF NORMAL LANES: <input type="text" name="normal" id="id3" required="required"  onChange="onDemandChange(this.id);"><br>
 <BR>
 <input type="submit" value="SUBMIT">
 
