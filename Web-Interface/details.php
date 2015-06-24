@@ -29,19 +29,19 @@ ul#choose li a:hover {
 session_start();
 
 //connect to db
-require_once 'db.inc.php';
+require_once '../db.inc.php';
 
 $user = $_POST['username'];
 $pass = $_POST['password'];
-$_SESSION["user"] = $user;
-$_SESSION["pass"] = $pass;
 $t= $_POST['type'];
 $query="select password from login where username ='".$user."' and type=".$t;
 $p= mysql_query($query)or die(mysql_error());
 $result=mysql_fetch_assoc($p)or die(mysql_error());
-if($result['password']== $pass)
-{          echo "Welcome ";
-           echo $_POST["username"];
+
+//if($result['password']== $pass)
+//{
+           echo "Welcome ";
+            echo $_POST["username"];
 ?> 
             <h2>Choose from the Below:</h2>
 <?php
@@ -95,8 +95,11 @@ function onDemandChange(id){
     
 <?php    }
     
-}
-    ?>
+
+//   else{
+//       echo "login deatils are no correct!!";
+//   }
+ ?>
     
 
 </body>
