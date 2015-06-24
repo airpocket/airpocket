@@ -15,7 +15,7 @@
 
  //fetch flight data belongs to user
  $query="select * from flight where id=".$user_data['flight_id'];
- $query=mysql_query($query);
+ $query=mysql_query($query)or die(mysql_error());
  $flight_details=mysql_fetch_assoc($query);
 
  //fetch uuid or set of uuid belongs to customer id
@@ -25,14 +25,12 @@
 
  echo "Name     : ".$user_data['name']."</br>";
  echo "Phone no : ".$user_data['phone']."</br>";
-$lane="2";
+ $lane=timeGap($user_id);
+echo "Lane no : ".$lane;
  $barCode=$lane.",@,".$user_id;
- $src="barcode.php?codetype=Code39&size=40&text=".$barCode;
-?>
-<img alt="TESTING" src=<?php $src;?> />
-<?php
- echo "Security Lane no : ".timeGap($user_id)."</br>";
+ $src="barcode.php?codetype=Code128&size=40&text='".$barCode."'";
 
-
-
+ echo "</br></br></br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+ echo "
+<img alt='TESTING' src='".$src."' />";
 ?>

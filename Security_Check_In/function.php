@@ -17,7 +17,7 @@ function currentTime(){
 function timeGap($user_id)
 {   // timeGap function will help to figure out that it is either emergy or norrmal case
     //getting current timme
-     $time_min=currentTime();
+    $time_min=currentTime();
    // selecting flight_id of user
     $query="select flight_id from user where id=".$user_id;
     $query=mysql_query($query);
@@ -71,8 +71,8 @@ function noramlCase(){
     while($result = mysql_fetch_assoc($query)){
        $send[$counter]=$result['id'];
         $counter++;
+        //echo "send :".$send[$counter]."<br>";
     }
-
     return($send);
 }
 

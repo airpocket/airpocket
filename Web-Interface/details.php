@@ -37,9 +37,8 @@ $t= $_POST['type'];
 $query="select password from login where username ='".$user."' and type=".$t;
 $p= mysql_query($query)or die(mysql_error());
 $result=mysql_fetch_assoc($p)or die(mysql_error());
-
-//if($result['password']== $pass)
-//{
+if($result['password']== $pass)
+{
            echo "Welcome ";
             echo $_POST["username"];
 ?> 
@@ -95,11 +94,10 @@ function onDemandChange(id){
     
 <?php    }
     
-
-//   else{
-//       echo "login deatils are no correct!!";
-//   }
- ?>
+}
+   else{
+       echo "login deatils are no correct!!";
+   } ?>
     
 
 </body>
