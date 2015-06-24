@@ -1,3 +1,15 @@
+<script>
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        //document.body.innerHTML = originalContents;
+    }
+</script>
 <?php
 /**
  * Created by IntelliJ IDEA.
@@ -22,7 +34,7 @@
 // $query="select uuid from user where id=".$user_id;
 // $query=mysql_query($query);
 // $result=mysql_fetch_assoc($query);
-
+echo "<div id='printableArea'>";
  echo "Name     : ".$user_data['name']."</br>";
  echo "Phone no : ".$user_data['phone']."</br>";
  $lane=timeGap($user_id);
@@ -32,5 +44,6 @@ echo "Lane no : ".$lane;
 
  echo "</br></br></br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
  echo "
-<img alt='TESTING' src='".$src."' />";
-?>
+<img alt='TESTING' src='".$src."' /></div>";
+?><input type="button" onclick="printDiv('printableArea')" value="print boarding pass!" />
+
