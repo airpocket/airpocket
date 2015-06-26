@@ -15,7 +15,7 @@
   <body>
       <header>
           <div class="headline">
-              <h1>Smarter Airport</h1>
+              <h1>Airpocket</h1>
           </div>
       </header>
     <section id="container" class="container">
