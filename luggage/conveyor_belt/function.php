@@ -5,6 +5,7 @@
  * Date: 6/11/2015
  * Time: 5:55 PMv
  */
+require_once ('../db.inc.php');
 
 function sms($url, $referer, $_data) {
     // convert variables array to string:
@@ -58,14 +59,14 @@ function updateStatus($stat,$uuid){
 }
 
 function userDetails($uuid){
-
     //fetching user_id related with uuid
     $query="select user_id,status from uuid where uuid='".$uuid."'";
-    $query=mysql_query($query)or die(mysql_query());
+	echo $query;
+  	$query=mysql_query($query)or die(mysql_query());
     $result=mysql_fetch_assoc($query)or die(mysql_query());
-    //$result['user_id'];
-     $status=$result['status'];
-    // echo $result['user_id'];
+    $result['user_id'];
+    $status=$result['status'];
+    echo "parminder".$result['user_id'];
     //fetching user details using user id from last query
     $query="select * from user where id=".$result['user_id'];
     $query=mysql_query($query);

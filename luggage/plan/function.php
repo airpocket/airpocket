@@ -5,11 +5,7 @@
  * Date: 6/11/2015
  * Time: 10:24 PM
  */
-
-function (){
-
-
-}
+ 
 
 function userDetails($uuid){
 

@@ -2,8 +2,7 @@
 //uncomment sms code before running
 require_once ('../db.inc.php');
 require('function.php');
-// $uuid=$_REQUEST['uuid'];
-$uuid="ffe4d519d016599e8ec0ff785b0be9bd";
+$uuid=$_REQUEST['uuid']; 
 $details=userDetails($uuid);
 $userData=explode("_%_",$details);
 //$userData[0] name
